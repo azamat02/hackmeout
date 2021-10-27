@@ -2,7 +2,6 @@ import Title from "antd/es/typography/Title";
 import {useState} from "react";
 import {Button, message, Select} from "antd";
 import UserService from "../../services/userService";
-import {Option} from "antd/es/mentions";
 import {useHistory} from "react-router-dom";
 import swal from "sweetalert";
 import FileService from "../../services/fileService";
@@ -84,7 +83,7 @@ export default function SendFile(){
       message.error('Choose file to send!')
       return
     }
-    fileService.SendFile({userReceiveUsername: usernameToSend, documentBase64: base64, fileName: filename}).then(res=>{
+    fileService.SendFile({userReceiveUsername: usernameToSend, documentBase64: base64, fileName: filename.substring(0, filename.length-4)}).then(res=>{
       console.log(res)
       swal('Success!', 'File uploaded successfully!', 'success')
       setTimeout(()=>{

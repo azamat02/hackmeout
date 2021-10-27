@@ -2,6 +2,8 @@ import React from 'react';
 import {Modal} from 'antd';
 import DrawSign from "../drawSign";
 import FileService from "../../services/fileService";
+import swal from 'sweetalert'
+import {useHistory} from "react-router-dom";
 
 const fileService = new FileService()
 
@@ -35,6 +37,8 @@ export default function SignModal(props){
   const handleOk = () => {
     downloadSign(documentId)
     setShowSignModal(false);
+    swal('Success!', 'Document signed!', 'success')
+    window.location = '/app/my_files'
   };
 
   const handleCancel = () => {

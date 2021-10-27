@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import FileService from "../../services/fileService";
 import Spinner from "../../components/extra/spinner";
 import SignModal from "../../components/signModal";
+import Title from "antd/es/typography/Title";
 
 
 export default function IncomingFiles() {
@@ -72,7 +73,7 @@ export default function IncomingFiles() {
   ];
 
   if (files === null) {
-    return <> <Spinner fontSize={35}/>
+    return <> <Title level={2}>No incoming files</Title>
     </>
   }
 
