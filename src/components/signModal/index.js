@@ -38,7 +38,9 @@ export default function SignModal(props){
     downloadSign(documentId)
     setShowSignModal(false);
     swal('Success!', 'Document signed!', 'success')
-    window.location = '/app/my_files'
+    setTimeout(()=>{
+      window.location = '/app/my_files'
+    }, 1000)
   };
 
   const handleCancel = () => {
