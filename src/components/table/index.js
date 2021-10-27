@@ -80,7 +80,7 @@ export default function DataTable(props) {
         filename: `${item.document.fileName}`,
         date: `${date}`,
         fileItem: item.id,
-        secured: flag
+        secured: true
       }
     )
   })
