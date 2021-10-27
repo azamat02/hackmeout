@@ -46,7 +46,7 @@ export default function Login(){
     <div className={'auth_container'}>
       <div className={'inner_auth_container'}>
         <Title level={4} style={{padding: '3% 0'}}>
-          Авторизация в систему
+          Authorization to system
         </Title>
         <Form
           name="normal_login"
