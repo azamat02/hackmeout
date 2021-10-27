@@ -22,8 +22,8 @@ export default function DrawSign() {
 
       <div style={{display: 'flex', justifyContent: 'start', marginTop: '20px'}}>
         <div style={{borderStyle: 'solid', borderWidth:'2px', borderColor:'color'}}>
-          <svg width="200px" height="100px" id={'sign'}>
-            <MouseDraw x={0} y={0} width={200} height={100} thickness={2} currentLine={currentLine} setCurrentLine={setCurrentLine} lines={lines} setLines={setLines}/>
+          <svg width="300px" height="150px" id={'sign'}>
+            <MouseDraw x={0} y={0} width={300} height={150} thickness={2} currentLine={currentLine} setCurrentLine={setCurrentLine} lines={lines} setLines={setLines}/>
           </svg>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import {Button, Table} from "antd";
-import {DownloadOutlined, EditOutlined} from "@ant-design/icons";
+import {Button, Table, Tag} from "antd";
+import {DownloadOutlined, CheckCircleOutlined, ExclamationCircleOutlined} from "@ant-design/icons";
 import Spinner from "../extra/spinner";
 
 export default function DataTable(props) {
@@ -34,6 +34,18 @@ export default function DataTable(props) {
       sorter: ()=>  new Date()
     },
     {
+      title: 'Security',
+      key: 'tags',
+      dataIndex: 'secured',
+      render: secured => (
+        <>
+          <Tag color={secured ? 'success': 'warning'} icon={secured ? <CheckCircleOutlined /> : <ExclamationCircleOutlined />}>
+            {secured ? 'PROTECTED' : 'UNPROTECTED'}
+          </Tag>
+        </>
+      ),
+    },
+    {
       title: 'Actions',
       dataIndex: 'fileItem',
       render: (id) => {
@@ -54,7 +66,12 @@ export default function DataTable(props) {
     </>
   }
 
-  let data = files.map(item=>{
+  let data = files.map((item, index)=>{
+    let flag = false
+    if (index % 2 == 0) {
+      flag = true
+    }
+
     let date = new Date(Date.parse(item.createdDate)).toLocaleString()
     return (
       {
@@ -63,6 +80,7 @@ export default function DataTable(props) {
         filename: `${item.document.fileName}`,
         date: `${date}`,
         fileItem: item.id,
+        secured: flag
       }
     )
   })

@@ -11,8 +11,8 @@ import Dragger from "antd/es/upload/Dragger";
 export default function SendFile(){
   const [usernameToSend, setUsernameToSend] = useState()
   const [searchList, setSearchList] = useState([])
-  const [base64, setBase64] = useState()
-  const [filename, setFilename] = useState()
+  const [base64, setBase64] = useState('')
+  const [filename, setFilename] = useState('')
 
   const fileService = new FileService()
   const userService = new UserService()
@@ -75,7 +75,7 @@ export default function SendFile(){
   };
 
   const upload = () => {
-    if (!usernameToSend) {
+    if (usernameToSend === '') {
       message.error('Choose user to send!')
       return
     }
