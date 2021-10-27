@@ -61,11 +61,11 @@ export default function Login(){
             rules={[
               {
                 required: true,
-                message: 'Введите ваш логин!',
+                message: 'Enter your username!',
               },
             ]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Логин" />
+            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
           </Form.Item>
 
           <Form.Item
@@ -73,34 +73,34 @@ export default function Login(){
             rules={[
               {
                 required: true,
-                message: 'Введите ваш пароль!',
+                message: 'Enter your password!',
               },
             ]}
           >
             <Input
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
-              placeholder="Пароль"
+              placeholder="Password"
             />
           </Form.Item>
           <Form.Item>
             <div style={{display: 'flex', justifyContent: "space-between"}}>
 
               <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Запомнить меня</Checkbox>
+                <Checkbox>Remember me</Checkbox>
               </Form.Item>
 
               <a style={{display: 'block'}} href="/forgot_password">
-                Забыли пароль?
+                Forgot password?
               </a>
             </div>
           </Form.Item>
 
           <Form.Item>
             <Button type="primary" icon={isLoading && <Spinner/>} disabled={isLoading} htmlType="submit" style={{width: '100%', margin: '3% 0'}} danger>
-              {!isLoading && 'Войти в систему'}
+              {!isLoading && 'Login to system'}
             </Button>
-            <a href="/">Вернуться на главную</a>
+            <a href="/">Go back to main</a>
           </Form.Item>
         </Form>
       </div>
