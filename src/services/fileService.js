@@ -5,6 +5,20 @@ export default class FileService {
     this._apiBase = 'http://localhost:8080/api/v1/'
   }
 
+  GetFilesSignedByMe = async () => {
+    let res = await customAxios.get('signed-document/get-document-for-signing/receiver').then((response)=>{
+      return response
+    })
+    return res;
+  }
+
+  GetFilesSignedForMe = async () => {
+    let res = await customAxios.get('signed-document/get-document-for-signing/sender').then((response)=>{
+      return response
+    })
+    return res;
+  }
+
   SendSign = async (data) => {
     let res = await customAxios.post('signed-document/create-signed-document', data).then((response)=>{
       return response

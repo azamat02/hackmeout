@@ -46,7 +46,7 @@ export default function MainPage() {
         <Layout.Content style={{ margin: '16px 16px' }}>
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
 
-            <Route exact path={'/app/my_files'}>
+            <Route path={'/app/my_files'}>
               <MyFiles/>
             </Route>
             <Route exact path={'/app/inbox'}>

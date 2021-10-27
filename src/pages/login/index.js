@@ -29,7 +29,7 @@ export default function Login(){
         localStorage.setItem('token', res.headers.jwt)
         localStorage.setItem('user', JSON.stringify(res.data))
         dispatch(signIn(res.data))
-        history.push('/app')
+        history.push('/app/my_files')
       }
       setIsLoading(false)
       if (res.data.id) {
