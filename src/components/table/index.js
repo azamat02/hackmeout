@@ -31,6 +31,7 @@ export default function DataTable(props) {
     {
       title: 'Date',
       dataIndex: 'date',
+      sorter: ()=>  new Date()
     },
     {
       title: 'Actions',

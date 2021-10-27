@@ -51,6 +51,7 @@ export default function IncomingFiles() {
     {
       title: 'Date',
       dataIndex: 'date',
+      sorter: ()=>  new Date()
     },
     {
       title: 'Actions',
