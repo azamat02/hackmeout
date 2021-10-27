@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import LoginPage from "./pages/login";
+import MainPage from "./pages/main";
+import {Route, BrowserRouter as Router, Switch, Redirect, useHistory} from "react-router-dom";
+import {Button, Result} from "antd";
 
 function App() {
+  const history = useHistory()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path={'/'}>
+          <Redirect to={'/login'}/>
+        </Route>
+        <Route exact path={'/login'} >
+          <LoginPage/>
+        </Route>
+        <Route path={'/app'}>
+          <MainPage/>
+        </Route>
+        <Route>
+          <Result
+            status="404"
+            title="404"
+            subTitle="Sorry, the page you visited doesn't exist."
+            extra={<Button type="primary" onClick={()=>{history.push('/')}}>Back Home</Button>}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

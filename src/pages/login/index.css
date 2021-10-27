@@ -1,0 +1,63 @@
+.auth_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.inner_auth_container {
+    width: 30%;
+    background: white;
+    boxShadow: 0px 1px 16px 7px rgba(34, 60, 80, 0.2);
+    padding: 2% 3%;
+    borderRadius: 10px;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    .inner_auth_container {
+        width: 30%;
+        borderRadius: 10px;
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .inner_auth_container {
+        width: 50%;
+        borderRadius: 10px;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .inner_auth_container {
+        width: 60%;
+        borderRadius: 10px;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .inner_auth_container {
+        width: 70%;
+        borderRadius: 10px;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .inner_auth_container {
+        width: 80%;
+        borderRadius: 10px;
+    }
+}
+
+/* Iphone 5 */
+@media (max-width: 320px) {
+    .inner_auth_container {
+        width: 90%;
+        borderRadius: 10px;
+    }
+}
+
+
